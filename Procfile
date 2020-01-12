@@ -1,0 +1,1 @@
+web: gunicorm app:app
