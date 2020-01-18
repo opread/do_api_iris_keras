@@ -10,5 +10,23 @@ pip install gunicorn
 
 pip freeze > requirements.txt 
 
+# update in requirements.txt
+- the tensorflow version to 2.0.0a0
+- remove other tensorflow related as they are installed anyway with tensorflow
+
 # Procfile creation
-web: gunicorm app:app
+web: gunicorn app:app
+
+Http call:
+curl --location --request POST 'https://do-api-iris-keras.herokuapp.com/api/flower' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "sepal_length": 5.5,
+    "sepal_width": 3.5,
+    "petal_length": 2.4,
+    "petal_width": 1.2
+}'
+
+Answer: "setosa"
+
+
