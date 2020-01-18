@@ -1,0 +1,14 @@
+
+# Instructions for creating the deployable app
+conda create --name mydeployenv python=3.7
+conda activate mydeployenv
+conda install pip
+pip install flask
+pip install scikit-learn
+pip install tensorflow
+pip install gunicorn
+
+pip freeze > requirements.txt 
+
+# Procfile creation
+web: gunicorm app:app
